@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+  margin-top: 200px;
+  width: 400px;
 }
 
 .App-logo {
@@ -35,4 +38,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.num {
+  color: violet
 }
