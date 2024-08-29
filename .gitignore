@@ -188,7 +188,27 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react
-
 # End of https://www.toptal.com/developers/gitignore/api/windows,java,gradle,intellij+all
 
+# properties
 application.properties
+
+# 빌드 결과물 제외
+build/
+dist/
+
+# IDE와 기타 도구의 임시 파일 제외
+*.log
+*.tmp
+*.swp
+
+# Node 모듈 제외
+node_modules/
+
+# 빌드 결과물 및 소스 맵 파일 제외
+src/main/resources/static/static/js/*.js
+src/main/resources/static/static/js/*.map
+src/main/resources/static/static/css/*.css
+
+# 특정 파일 제외
+src/main/resources/static/static/js/*.js.LICENSE.txt
