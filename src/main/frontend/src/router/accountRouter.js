@@ -5,6 +5,7 @@ const Loading = <div>Loading....</div>
 const AccountList = lazy(() => import("../pages/account/list"))
 const AccountCreate = lazy(() => import("../pages/account/create"))
 const AccountInfo = lazy(() => import("../pages/account/info"))
+const AccountUpdate = lazy(() => import("../pages/account/update"))
 
 
 const accountRouter = () => {
@@ -22,6 +23,9 @@ const accountRouter = () => {
         },{
             path: 'info/:account_id',
             element: <Suspense fallback={Loading}><AccountInfo/></Suspense>
+        },{
+            path: 'update/:account_id',
+            element: <Suspense fallback={Loading}><AccountUpdate/></Suspense>
         }
 
     ]
