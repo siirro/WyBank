@@ -1,19 +1,16 @@
 import React from 'react';
-import BasicMenu from "../components/menus/BasicMenu";
+import Header from "../components/menus/Header";
 
 function BasicLayout({children}) {
     return (
         <>
-            <header className={'bg-white'}>
-                <BasicMenu/>
-            </header>
+            <Header/>
 
-            <div className={'bg-white my-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0'}>
-                <aside className={"bg-teal-50 md:w-1/5 lg:w-1/5 px-5 py-40"}>
-                    <h1>Sidebar</h1>
+            <div className={'bg-white my-5 w-full flex flex-col space-y-1 md:flex-row md:space-x-2 md:space-y-0'}>
+                <aside className={"bg-teal-50 md:w-1/5 lg:w-1/5 px-5 h-[500px] flex"}>
+                    <h1 className={"text-xl md:text-2xl"}>Sidebar</h1>
                 </aside>
-                <main className={"bg-teal-50 md:w-4/5 lg:w-4/5 px-5 py-40"}>{children}</main>
-
+                <main className={"bg-teal-50 md:w-4/5 lg:w-4/5 px-5 h-[500px]"}>{children}</main>
             </div>
         </>
     );
