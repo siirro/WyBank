@@ -1,13 +1,22 @@
 import React from 'react';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 function Info(props) {
 
+    const navigate = useNavigate()
     const {account_id} = useParams();
-    console.log(account_id)
+
+    const moveToModify = (account_id) => {
+        navigate({pathname: `/account/modify/${account_id}`})
+    }
 
     return (
-        <div>info</div>
+        <div>
+            info {account_id}번 계좌
+            <div>
+                <button onClick={() => moveToModify(account_id)}>Test Modify</button>
+            </div>
+        </div>
     );
 }
 
