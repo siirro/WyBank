@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[927],{927:(n,t,c)=>{c.r(t),c.d(t,{default:()=>i});c(43);var e=c(216),d=c(579);const i=function(n){const t=(0,e.Zp)(),{account_id:c}=(0,e.g)();return(0,d.jsxs)("div",{children:["info ",c,"\ubc88 \uacc4\uc88c",(0,d.jsx)("div",{children:(0,d.jsx)("button",{onClick:()=>(n=>{t({pathname:`/account/modify/${n}`})})(c),children:"Test Modify"})})]})}}}]);
+//# sourceMappingURL=927.60ae5081.chunk.js.map

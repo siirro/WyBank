@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[659],{659:(e,s,t)=>{t.r(s),t.d(s,{default:()=>r});t(43);var n=t(475),a=t(579);const r=function(e){const[s]=(0,n.ok)(),t=s.get("page")?parseInt(s.get("page")):1,r=s.get("size")?parseInt(s.get("size")):10;return(0,a.jsx)("div",{className:"p-4 w-full bg-white",children:(0,a.jsxs)("div",{className:"",children:["Todo List Page Component --- ",t," --- ",r]})})}}}]);
+//# sourceMappingURL=659.722f3e9f.chunk.js.map
