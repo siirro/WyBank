@@ -192,6 +192,7 @@ sketch
 
 # properties
 application-local.properties
+application-prod.properties
 
 # 빌드 결과물 제외
 build/
