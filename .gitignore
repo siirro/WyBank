@@ -191,7 +191,8 @@ sketch
 # End of https://www.toptal.com/developers/gitignore/api/windows,java,gradle,intellij+all
 
 # properties
-application.properties
+#application.properties
+application-local.properties
 
 # 빌드 결과물 제외
 build/
