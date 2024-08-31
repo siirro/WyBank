@@ -1,4 +1,4 @@
-package com.wybank.domain;
+package com.wybank.user.domain;
 
 import java.time.LocalDateTime;
 
