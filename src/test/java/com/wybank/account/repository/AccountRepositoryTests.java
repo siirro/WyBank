@@ -6,14 +6,18 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
 @SpringBootTest
 @Log4j2
+@ActiveProfiles("local")
 public class AccountRepositoryTests {
 
     @Autowired
@@ -25,7 +29,6 @@ public class AccountRepositoryTests {
         log.info(accountRepository.getClass().getName());
     }
 
-    @Transactional
     @Test
     public void testInsert() {
         Account account = Account.builder()
