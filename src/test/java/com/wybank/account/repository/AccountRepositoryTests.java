@@ -54,4 +54,15 @@ public class AccountRepositoryTests {
         log.info("조회"+account);
     }
 
+    @Test
+    public void testUpdateBalance() {
+        //먼저 로딩하고 엔티티 객체를 변경 /setter
+        Long accountId = 1L;
+        Optional<Account> result = accountRepository.findById(accountId);
+        Account account = result.orElseThrow();
+        account.changeBalance(account.getBalance() + 50000L);
+        account.changeUpdatedAt(LocalDateTime.now());
+        accountRepository.save(account);
+    }
+
 }

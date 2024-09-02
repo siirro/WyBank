@@ -2,6 +2,7 @@ package com.wybank.account.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Where;
 
 import java.time.LocalDateTime;
 
@@ -11,11 +12,12 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "account")
+@Where(clause = "is_closed=false")
 public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
     private Long accountId;
     private String userId;
     private Long bankId;
@@ -28,5 +30,12 @@ public class Account {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime closedAt;
+
+    public void changeBalance(Long balance) {
+        this.balance = balance;
+    }
+    public void changeUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
 
