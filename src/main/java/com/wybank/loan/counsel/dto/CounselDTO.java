@@ -12,7 +12,6 @@ public class CounselDTO {
     @Getter
     public static class Request{
 
-
         private String name;
         private String cellPhone;
         private String email;

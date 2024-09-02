@@ -17,4 +17,9 @@ public class CounselController  extends AbstractController {
     public ResponseDTO<CounselDTO.Response> create(@RequestBody CounselDTO.Request request){
         return ok(counselService.create(request));
     }
+
+    @GetMapping("/{counselId}")
+    public ResponseDTO<CounselDTO.Response> get(@PathVariable("counselId") Long counselId){
+        return ok(counselService.get(counselId));
+    }
 }

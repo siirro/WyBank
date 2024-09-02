@@ -3,6 +3,8 @@ package com.wybank.loan.counsel.service;
 import com.wybank.loan.counsel.domain.Counsel;
 import com.wybank.loan.counsel.dto.CounselDTO;
 import com.wybank.loan.counsel.repository.CounselRepository;
+import com.wybank.loan.exception.BaseException;
+import com.wybank.loan.exception.ResultType;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -25,5 +27,14 @@ public class CounselServiceImpl implements CounselService{
 
         Counsel created = counselRepository.save(counsel);
         return modelMapper.map(created, CounselDTO.Response.class);
+    }
+
+    // 상담조회
+    @Override
+    public CounselDTO.Response get(Long counselId) {
+
+       Counsel counsel = counselRepository.findById(counselId).orElseThrow(()-> new BaseException(ResultType.SYSTEM_ERROR));
+
+       return modelMapper.map(counsel, CounselDTO.Response.class);
     }
 }
