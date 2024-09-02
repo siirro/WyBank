@@ -1,8 +1,8 @@
-package com.wybank.loan.counsel.controller;
+package com.wybank.controller;
 
 
-import com.wybank.loan.dto.ResponseDTO;
-import com.wybank.loan.dto.ResultObject;
+import com.wybank.dto.ResponseDTO;
+import com.wybank.dto.ResultObject;
 
 public abstract class AbstractController {
 

@@ -1,7 +1,7 @@
-package com.wybank.loan.dto;
+package com.wybank.dto;
 
-import com.wybank.loan.exception.BaseException;
-import com.wybank.loan.exception.ResultType;
+import com.wybank.exception.BaseException;
+import com.wybank.exception.ResultType;
 import java.io.Serializable;
 
 import lombok.AllArgsConstructor;

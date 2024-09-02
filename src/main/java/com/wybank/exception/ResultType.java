@@ -1,4 +1,4 @@
-package com.wybank.loan.exception;
+package com.wybank.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

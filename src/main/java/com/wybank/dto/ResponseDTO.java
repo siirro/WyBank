@@ -1,9 +1,9 @@
-package com.wybank.loan.dto;
+package com.wybank.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 
-import com.wybank.loan.exception.BaseException;
+import com.wybank.exception.BaseException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

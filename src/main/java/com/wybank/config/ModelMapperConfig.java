@@ -1,4 +1,4 @@
-package com.wybank.loan.config;
+package com.wybank.config;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

@@ -1,8 +1,9 @@
 package com.wybank.loan.counsel.controller;
 
+import com.wybank.controller.AbstractController;
 import com.wybank.loan.counsel.dto.CounselDTO;
 import com.wybank.loan.counsel.service.CounselService;
-import com.wybank.loan.dto.ResponseDTO;
+import com.wybank.dto.ResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
