@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @DynamicInsert
 @DynamicUpdate
-@Where(clause = "is_deleted=false")
+//@Where(clause = "is_deleted=false")
 public class Counsel extends BaseEntity{
 
     @Id
