@@ -1,10 +1,10 @@
 package com.wybank.loan.counsel.domain;
 
+import com.wybank.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.Where;
 
 import java.time.LocalDateTime;
 
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @DynamicInsert
 @DynamicUpdate
 //@Where(clause = "is_deleted=false")
-public class Counsel extends BaseEntity{
+public class Counsel extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
