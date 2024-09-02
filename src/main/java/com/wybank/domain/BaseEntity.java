@@ -1,4 +1,4 @@
-package com.wybank.loan.counsel.domain;
+package com.wybank.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
