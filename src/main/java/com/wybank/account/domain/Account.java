@@ -22,12 +22,15 @@ public class Account {
     private String userId;
     private Long bankId;
     private String accountNumber;
-    private String accountName; // 계좌별명
+    @Column(columnDefinition = "varchar(30)")
+    private String accountName; // 계좌이름
     private String accountMemo; // 계좌메모
     private Long balance; // 계좌잔액
     private String accountState; // "active:활성","frozen:정지","dormant:휴면"(1년 미사용)
     private boolean isClosed; // 삭제된 계좌
+    @Column(updatable = false, columnDefinition = "DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '생성일자'")
     private LocalDateTime createdAt;
+    @Column(columnDefinition = "DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '수정일자'")
     private LocalDateTime updatedAt;
     private LocalDateTime closedAt;
 

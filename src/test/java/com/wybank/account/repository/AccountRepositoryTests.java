@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
@@ -65,4 +69,17 @@ public class AccountRepositoryTests {
         accountRepository.save(account);
     }
 
+    @Test
+    public void testPaging() {
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("createdAt").descending());
+        Page<Account> result = accountRepository.findAll(pageable);
+
+        log.info("페이징 후 조회" + result.getTotalElements());
+        log.info("페이징 후 조회2" +result.getContent());
+    }
+
+    @Test
+    public void testSearch1() {
+        accountRepository.search1();
+    }
 }
