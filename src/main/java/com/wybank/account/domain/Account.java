@@ -2,6 +2,8 @@ package com.wybank.account.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.Where;
 
 import java.time.LocalDateTime;
@@ -28,12 +30,17 @@ public class Account {
     private Long balance; // 계좌잔액
     private String accountState; // "active:활성","frozen:정지","dormant:휴면"(1년 미사용)
     private boolean isClosed; // 삭제된 계좌
-    @Column(updatable = false, columnDefinition = "DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '생성일자'")
+    @Column(columnDefinition = "DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '생성일자'")
+    @CreationTimestamp
     private LocalDateTime createdAt;
     @Column(columnDefinition = "DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '수정일자'")
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime closedAt;
 
+    public void changeAccountMemo(String accountMemo) {
+        this.accountMemo = accountMemo;
+    }
     public void changeBalance(Long balance) {
         this.balance = balance;
     }

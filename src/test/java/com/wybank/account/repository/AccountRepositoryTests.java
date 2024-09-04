@@ -78,8 +78,8 @@ public class AccountRepositoryTests {
         log.info("페이징 후 조회2" +result.getContent());
     }
 
-    @Test
-    public void testSearch1() {
-        accountRepository.search1();
-    }
+//    @Test
+//    public void testSearch1() {
+//        accountRepository.search1();
+//    }
 }

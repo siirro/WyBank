@@ -1,7 +1,13 @@
 package com.wybank.dto;
 
-import java.util.List;
+import lombok.Builder;
+import lombok.Data;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+@Data
 public class PageResponseDTO<E> {
 
     private List<E> dtolist;
@@ -10,13 +16,14 @@ public class PageResponseDTO<E> {
     private boolean prev, next;
     private int totalCount, prevPage, nextPage, totalPage, currentPage;
 
+    @Builder(builderMethodName = "withAll")
     public PageResponseDTO(List<E> dtoList, PageRequestDTO pageRequestDTO, long totalCount) {
         this.dtolist = dtoList;
         this.pageRequestDTO = pageRequestDTO;
         this.totalCount = (int) totalCount;
 
         // 끝페이지 계산 end
-        int end = (int)(Math.ceil(pageRequestDTO.getPage() / 10.0))*10;
+        int end = (int)(Math.ceil(pageRequestDTO.getPage() / (double)pageRequestDTO.getSize() )*10);
         int start = end - 9;
 
         // 마지막 페이지
@@ -25,5 +32,8 @@ public class PageResponseDTO<E> {
         this.prev = start > 1;
         this.next = totalCount > end * pageRequestDTO.getSize();
 
+        this.pageNumList = IntStream.rangeClosed(start, end).boxed().collect(Collectors.toList());
+        this.prevPage = prev ? start - 1 : 0;
+        this.nextPage = next ? end + 1 : 0;
     }
 }
