@@ -90,14 +90,22 @@ public class CounselServiceTest {
 
         Long findId = 1L;
 
+        // db에서 가져온 entity
         Counsel entity = Counsel.builder()
                 .counselId(1L)
+                .name("정다희")
+                .build();
+        // 수정하도록 요청이 들어온 값
+        CounselDTO.Request request =  CounselDTO.Request.builder()
+                .name("정다쿠")
                 .build();
 
+        when(counselRepository.save(ArgumentMatchers.any(Counsel.class))).thenReturn(entity);// mock 처리
         when(counselRepository.findById(findId)).thenReturn(Optional.ofNullable(entity));
 
-        CounselDTO.Response actual = counselService.get(findId);
+        CounselDTO.Response actual = counselService.update(findId,request);
 
         assertThat(actual.getCounselId()).isSameAs(findId);
+        assertThat(actual.getName()).isSameAs(request.getName());
     }
 }

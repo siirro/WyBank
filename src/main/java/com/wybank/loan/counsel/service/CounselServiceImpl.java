@@ -43,8 +43,10 @@ public class CounselServiceImpl implements CounselService{
     public CounselDTO.Response update(Long counselId, CounselDTO.Request request) {
 
         Counsel counsel = counselRepository.findById(counselId).orElseThrow(()-> new BaseException(ResultType.ARTICLE_NOT_FOUND));
-
+        //TODO 정책에 따라서 validation 처리 필요함
         counsel.modifyCounsel(request);
+
+        counselRepository.save(counsel);
 
         return modelMapper.map(counsel, CounselDTO.Response.class);
     }
