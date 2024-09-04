@@ -23,4 +23,9 @@ public class CounselController  extends AbstractController {
     public ResponseDTO<CounselDTO.Response> get(@PathVariable("counselId") Long counselId){
         return ok(counselService.get(counselId));
     }
+
+    @PutMapping("/{counselId}")
+    public ResponseDTO<CounselDTO.Response> update(@PathVariable("counselId") Long counselId, @RequestBody  CounselDTO.Request request){
+        return ok(counselService.update(counselId,request));
+    }
 }
