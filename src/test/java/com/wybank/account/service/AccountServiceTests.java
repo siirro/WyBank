@@ -2,6 +2,7 @@ package com.wybank.account.service;
 
 import com.wybank.account.domain.Account;
 import com.wybank.account.dto.AccountDTO;
+import com.wybank.dto.PageRequestDTO;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +27,18 @@ public class AccountServiceTests {
 
     @Test
     public void testCreate() {
-        AccountDTO dto = AccountDTO.builder()
-                .accountName("서비스테스트")
-                .accountNumber("111-111-111-111")
-                .accountState("active")
-                .balance(0L)
-                .createdAt(LocalDateTime.now())
-                .userId("testId")
-                .build();
+//        for(int i = 0; i<20; i++) {
+            AccountDTO dto = AccountDTO.builder()
+                    .accountName("서비스테스트..")
+                    .accountNumber("111-111-111-111")
+                    .accountState("active")
+                    .balance(0L)
+                    .createdAt(LocalDateTime.now())
+                    .userId("testId")
+                    .build();
 
-        log.info("만들어진계좌의번호는?"+accountService.create(dto));
+            log.info("만들어진계좌의번호는?"+accountService.create(dto));
+//        }
     }
 
     @Test
@@ -51,5 +54,12 @@ public class AccountServiceTests {
         log.info(LocalDateTime.now());
         accountService.updateBalance(dto);
 
+    }
+
+    @Test
+    public void testGetList() {
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder().page(2).build();
+
+        log.info("page처리"+accountService.getList(pageRequestDTO));
     }
 }
