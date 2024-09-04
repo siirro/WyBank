@@ -37,4 +37,15 @@ public class CounselServiceImpl implements CounselService{
 
        return modelMapper.map(counsel, CounselDTO.Response.class);
     }
+
+    // 상담 수정
+    @Override
+    public CounselDTO.Response update(Long counselId, CounselDTO.Request request) {
+
+        Counsel counsel = counselRepository.findById(counselId).orElseThrow(()-> new BaseException(ResultType.ARTICLE_NOT_FOUND));
+
+        counsel.modifyCounsel(request);
+
+        return modelMapper.map(counsel, CounselDTO.Response.class);
+    }
 }

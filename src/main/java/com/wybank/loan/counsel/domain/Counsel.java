@@ -1,6 +1,7 @@
 package com.wybank.loan.counsel.domain;
 
 import com.wybank.domain.BaseEntity;
+import com.wybank.loan.counsel.dto.CounselDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
@@ -48,4 +49,14 @@ public class Counsel extends BaseEntity {
     @Column(columnDefinition = "varchar(5) DEFAULT NULL COMMENT '우편번호'")
     private String zipCode;
 
+
+    public void modifyCounsel(CounselDTO.Request request) {
+        this.name = request.getName();
+        this.cellPhone = request.getCellPhone();
+        this.email = request.getEmail();
+        this.memo = request.getMemo();
+        this.address = request.getAddress();
+        this.addressDetail = request.getAddressDetail();
+        this.zipCode = request.getZipCode();
+    }
 }
