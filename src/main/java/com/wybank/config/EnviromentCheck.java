@@ -21,8 +21,8 @@ public class EnviromentCheck {
         String name = env.getProperty("spring.datasource.username"); // name 가져오기
 
         //로그 찍기
-//        log.info("url = {}", url);
-//        log.info("name = {}", name);
+        log.info("url = {}", url);
+        log.info("name = {}", name);
 
     }
 }
