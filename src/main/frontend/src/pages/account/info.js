@@ -4,7 +4,7 @@ import {createSearchParams, useNavigate, useParams, useSearchParams} from "react
 function Info(props) {
 
     const navigate = useNavigate()
-    const {account_id} = useParams();
+    const {accountId} = useParams();
 
     const [queryParams] = useSearchParams()
     const page = queryParams.get('page') ? parseInt(queryParams.get('page')) : 1
@@ -12,9 +12,9 @@ function Info(props) {
 
     const queryStr = createSearchParams({page:page, size:size}).toString();
 
-    const moveToUpdate = (account_id) => {
+    const moveToUpdate = (accountId) => {
         navigate({
-            pathname: `/account/update/${account_id}`,
+            pathname: `/account/update/memo/${accountId}`,
             search: queryStr
         })
     }
@@ -29,10 +29,14 @@ function Info(props) {
 
     return (
         <div>
-            info {account_id}번 계좌
+            {/*info {accountId}번 계좌*/}
+            {/*<div>*/}
+            {/*    <button onClick={() => moveToUpdate(accountId)}>계좌메모변경</button>*/}
+            {/*    <button onClick={moveToList}> 목록돌아가기</button>*/}
+            {/*</div>*/}
+
             <div>
-                <button onClick={() => moveToUpdate(account_id)}>계좌비번변경</button>
-                <button onClick={moveToList}> 목록돌아가기</button>
+                Account {accountId} Info
             </div>
         </div>
     );

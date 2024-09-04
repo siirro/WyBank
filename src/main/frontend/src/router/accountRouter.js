@@ -21,10 +21,10 @@ const accountRouter = () => {
             path: 'create',
             element: <Suspense fallback={Loading}><AccountCreate/></Suspense>
         },{
-            path: 'info/:account_id',
+            path: 'info/:accountId',
             element: <Suspense fallback={Loading}><AccountInfo/></Suspense>
         },{
-            path: 'update/:account_id',
+            path: 'update/:accountId',
             element: <Suspense fallback={Loading}><AccountUpdate/></Suspense>
         }
 
