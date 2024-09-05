@@ -27,18 +27,18 @@ public class AccountServiceTests {
 
     @Test
     public void testCreate() {
-//        for(int i = 0; i<20; i++) {
+        for(int i = 0; i<30; i++) {
             AccountDTO dto = AccountDTO.builder()
-                    .accountName("서비스테스트..")
+                    .accountName("서비스테스트.."+i)
                     .accountNumber("111-111-111-111")
                     .accountState("active")
                     .balance(0L)
                     .createdAt(LocalDateTime.now())
-                    .userId("testId")
+                    .userId("testId"+i)
                     .build();
 
             log.info("만들어진계좌의번호는?"+accountService.create(dto));
-//        }
+        }
     }
 
     @Test
