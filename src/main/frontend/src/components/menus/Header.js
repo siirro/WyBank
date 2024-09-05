@@ -18,7 +18,7 @@ function Header(props) {
                             <Link to={'/login'}>로그인</Link>
                         </div>
                         <div className={"text-blue-400 text-sm m-1 rounded"}>
-                            <Link to={'/signup'}>회원가입</Link>
+                            <Link to={'/signUp'}>회원가입</Link>
                         </div>
                     </div>
                 </div>
@@ -26,6 +26,9 @@ function Header(props) {
                     <ul className={"flex flex-grow items-center space-x-4 py-4 text-blue-300 font-bold"}>
                         <li className={"mr-3 text-2xl"}>
                             <Link to={'/account/'}>조회</Link>
+                        </li>
+                        <li className={"text-2xl"}>
+                            <Link to={'/account/product'}>상품</Link>
                         </li>
                         <li className={"text-2xl"}>
                             <Link to={'/transaction'}>이체</Link>

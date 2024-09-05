@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Where(clause = "is_closed=false")
+//@Where(clause = "is_closed=false")
 public class Account {
 
     @Id
@@ -24,11 +24,12 @@ public class Account {
     private String userId;
     private Long bankId;
     private String accountNumber;
-    private String accountName; // 계좌이름
+    private Long accountProductId; // 계좌 상품 ID
     private String accountMemo; // 계좌메모
+    private String accountState; // "활성","정지","휴면"(1년 미사용) "active:frozen:dormant"
+    private String accountPw; // 계좌비밀번호 (암호화)
     private Long balance; // 계좌잔액
-    private String accountState; // "active:활성","frozen:정지","dormant:휴면"(1년 미사용)
-    private boolean isClosed; // 삭제된 계좌
+    private boolean isClosed; // 1:해지계좌
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp
