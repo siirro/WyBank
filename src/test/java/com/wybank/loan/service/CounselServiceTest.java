@@ -108,4 +108,21 @@ public class CounselServiceTest {
         assertThat(actual.getCounselId()).isSameAs(findId);
         assertThat(actual.getName()).isSameAs(request.getName());
     }
+
+    @Test
+    void Should_DeleteCounselEntity_When_DeleteCounselId(){
+        Long targetId = 1L;
+
+        Counsel entity = Counsel.builder()
+                .counselId(1L)
+                .build();
+
+        when(counselRepository.save(ArgumentMatchers.any(Counsel.class))).thenReturn(entity);// mock 처리
+        when(counselRepository.findById(targetId)).thenReturn(Optional.ofNullable(entity));
+
+        counselService.delete(targetId);
+
+        assertThat(entity.getIsDeleted()).isSameAs(false);
+
+    }
 }

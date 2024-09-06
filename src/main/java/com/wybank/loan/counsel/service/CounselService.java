@@ -9,4 +9,6 @@ public interface CounselService {
     CounselDTO.Response get(Long counselId); // 상담조회
 
     CounselDTO.Response update(Long counselId,CounselDTO.Request request); // 상담수정
+
+    void delete(Long counselId); // 상담삭제
 }
