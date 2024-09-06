@@ -50,4 +50,16 @@ public class CounselServiceImpl implements CounselService{
 
         return modelMapper.map(counsel, CounselDTO.Response.class);
     }
+
+    // 상담 삭제
+    @Override
+    public void delete(Long counselId) {
+        // 대출 리스트에서 버튼 선택 -> 삭헤한다. -> 있는것만 조회 , 삭제하기 때문에 게시글이 있는지없는지 확인 할 필요 없음
+        Counsel counsel = counselRepository.findById(counselId).orElseThrow(()-> new BaseException(ResultType.ARTICLE_NOT_FOUND));
+
+        counsel.setIsDeleted(true);
+
+        counselRepository.save(counsel);
+
+    }
 }
