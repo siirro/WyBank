@@ -23,12 +23,11 @@ function InfoComponent({accountId}) {
     }, [accountId]);
     return (
         <div className={"border-2 border-sky-100 mt-5 m-2 p-4"}>
-            {makeDiv('accountNumber', account.accountNumber)}
-            {makeDiv('accountName', account.accountName)}
-            {makeDiv('accountMemo', account.accountMemo)}
-            {makeDiv('accountState', account.accountState)}
-            {makeDiv('balance', account.balance)}
-            {makeDiv('createdAt', account.createdAt)}
+            {makeDiv('계좌번호', account.accountNumber)}
+            {makeDiv('계좌이름', account.accountName+" ("+account.accountMemo+")" )}
+            {makeDiv('계좌상태', account.accountState)}
+            {makeDiv('잔액', account.balance)}
+            {makeDiv('계좌생성일', account.createdAt)}
 
             <div className={"flex justify-center p-4"}>
                 <button type={"button"} className={"text-xs rounded p-2 m-2 w-24 text-white bg-blue-100"}

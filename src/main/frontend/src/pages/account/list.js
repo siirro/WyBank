@@ -1,5 +1,6 @@
 import React from 'react';
 import {createSearchParams, useSearchParams} from "react-router-dom";
+import ListComponent from "../../components/account/ListComponent";
 
 function List(props) {
 
@@ -10,8 +11,9 @@ function List(props) {
     return (
         <div className={"p-4 w-full bg-white"}>
             <div className={""}>
-                Todo List Page Component --- {page} --- {size}
+                Account List Page  --- {page} --- {size}
             </div>
+            <ListComponent/>
         </div>
     );
 }

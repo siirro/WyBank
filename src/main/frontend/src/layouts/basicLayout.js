@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from "../components/menus/header";
+import Header from "../components/menus/Header";
 
 function BasicLayout({children}) {
     return (
