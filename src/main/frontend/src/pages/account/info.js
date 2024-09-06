@@ -1,6 +1,6 @@
 import React from 'react';
 import {createSearchParams, useNavigate, useParams, useSearchParams} from "react-router-dom";
-import ReadComponent from "../../components/account/ReadComponent";
+import InfoComponent from "../../components/account/infoComponent";
 
 function Info(props) {
 
@@ -29,16 +29,16 @@ function Info(props) {
 
 
     return (
-        <div className={"font-bold w-full bg-white mt-6"}>
+        <div className={"w-full bg-white mt-6"}>
             {/*<div>*/}
             {/*    <button onClick={() => moveToUpdate(accountId)}>계좌메모변경</button>*/}
             {/*    <button onClick={moveToList}> 목록돌아가기</button>*/}
             {/*</div>*/}
 
-            <div className={"text-2xl"}>
+            <div className={"font-bold text-2xl"}>
                 Account {accountId} Info
             </div>
-            <ReadComponent accountId={accountId}/>
+            <InfoComponent accountId={accountId}/>
         </div>
     );
 }

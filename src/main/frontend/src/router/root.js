@@ -6,7 +6,7 @@ import loanRouter from "./loan/loanRouter";
 const Loading = <div>Loading....</div>
 const Main = lazy(() => import("../pages/main"))
 const About = lazy(() => import("../pages/about/about"))
-const AccountIndex = lazy(() => import("../pages/account/IndexAccount"))
+const AccountIndex = lazy(() => import("../pages/account/indexAccount"))
 const LoanIndex = lazy(() => import("../pages/loan/IndexLoan"))
 
 

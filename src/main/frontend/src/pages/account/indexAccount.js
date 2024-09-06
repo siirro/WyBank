@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import BasicLayout from "../../layouts/BasicLayout";
+import BasicLayout from "../../layouts/basicLayout";
 import {Link, Outlet, useNavigate} from "react-router-dom";
 
 function IndexAccount(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import BasicLayout from "../../layouts/BasicLayout";
+import BasicLayout from "../../layouts/basicLayout";
 
 function About(props) {
     return (
