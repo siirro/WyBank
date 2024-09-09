@@ -36,7 +36,6 @@ public class AccountRepositoryTests {
     @Test
     public void testInsert() {
         Account account = Account.builder()
-                .accountName("테스트계좌")
                 .accountNumber("111-111-111-111")
                 .accountState("active")
                 .balance(0L)

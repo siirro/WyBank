@@ -5,6 +5,6 @@ import com.wybank.account.domain.AccountProduct;
 import com.wybank.dto.PageRequestDTO;
 import org.springframework.data.domain.Page;
 
-public interface AccountSearch {
-    Page<Account> searchAccountList(PageRequestDTO pageRequestDTO);
+public interface AccountProductSearch {
+    Page<AccountProduct> searchAccountProductList(PageRequestDTO pageRequestDTO);
 }

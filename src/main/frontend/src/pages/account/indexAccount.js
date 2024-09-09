@@ -9,7 +9,7 @@ function IndexAccount(props) {
         navigate({pathname: 'list'})
     }, [])
     const handleClickCreate = useCallback(() => {
-        navigate({pathname: 'create'})
+        navigate({pathname: 'create/form'})
     }, [])
 
     return (

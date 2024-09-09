@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor // JSON 으로 변환할때 비어있는 생성자 필요
 public class AccountDTO {
-
     private Long accountId;
     private String userId;
     private Long bankId;
