@@ -1,11 +1,9 @@
 package com.wybank.loan.counsel.domain;
 
-import com.wybank.domain.BaseEntity;
 import com.wybank.loan.counsel.dto.CounselDTO;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.*;
 
 import java.time.LocalDateTime;
 
@@ -17,8 +15,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @DynamicInsert
 @DynamicUpdate
-//@Where(clause = "is_deleted=false")
-public class Counsel extends BaseEntity {
+@Where(clause = "is_deleted=false")
+//public class Counsel extends BaseEntity {
+public class Counsel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,6 +48,16 @@ public class Counsel extends BaseEntity {
     @Column(columnDefinition = "varchar(5) DEFAULT NULL COMMENT '우편번호'")
     private String zipCode;
 
+//    @Column(nullable = false, columnDefinition = "datetime COMMENT '생성일자'")
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
+    @ColumnDefault("false")
+    @Column(columnDefinition = "TINYINT(1)")
+    private Boolean isDeleted ;
 
     public void modifyCounsel(CounselDTO.Request request) {
         this.name = request.getName();
