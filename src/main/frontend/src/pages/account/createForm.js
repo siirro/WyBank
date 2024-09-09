@@ -1,10 +1,10 @@
 import React from 'react';
 import BasicLayout from "../../layouts/basicLayout";
 
-function Create(props) {
+function CreateForm(props) {
     return (
-        <div>계좌생성페이지</div>
+        <div>계좌생성-신청서</div>
     );
 }
 
-export default Create;
+export default CreateForm;

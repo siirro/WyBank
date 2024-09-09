@@ -9,13 +9,10 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface AccountService {
     AccountDTO get(Long accountId);
-
     Long create(AccountDTO dto);
-
     void updateMemo(AccountDTO dto);
     void updateBalance(AccountDTO dto);
     void delete(Long accountId);
-
     PageResponseDTO<AccountDTO> getList(PageRequestDTO pageRequestDTO);
 
     default AccountDTO entityToDTO(Account account) {

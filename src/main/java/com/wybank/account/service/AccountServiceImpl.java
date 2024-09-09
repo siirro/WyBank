@@ -61,7 +61,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public PageResponseDTO<AccountDTO> getList(PageRequestDTO pageRequestDTO) {
         // JPA
-        Page<Account> result = accountRepository.search1(pageRequestDTO);
+        Page<Account> result = accountRepository.searchAccountList(pageRequestDTO);
         List<AccountDTO> dtoList = result.get().map(account -> entityToDTO(account)).collect(Collectors.toList());
 
         PageResponseDTO<AccountDTO> pageResponseDTO = PageResponseDTO.<AccountDTO>withAll()
