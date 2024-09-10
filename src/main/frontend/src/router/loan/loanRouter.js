@@ -2,6 +2,7 @@ import {lazy, Suspense} from "react";
 import {Navigate} from "react-router-dom";
 
 const Loading = <div>Loading....</div>
+const List = lazy(() => import("../../pages/loan/list"));
 const LoanList = lazy(() => import("../../pages/loan/loanList"))
 const CounselList = lazy(() => import("../../pages/loan/counselList"))
 const LoanCreate = lazy(() => import("../../pages/loan/create"))
@@ -14,6 +15,10 @@ const loanRouter = () => {
         {
             path: '',
             element: <Navigate replace={true} to={'list'}/>
+        },
+        {
+            path: 'list',
+            element: <Suspense fallback={Loading}><List/></Suspense>
         },
         {
             path: 'loanList',
