@@ -22,15 +22,12 @@ function IndexLoan(props) {
 
             <div className={"w-full flex m-2 p-2"}>
                 <div className={"m-1 p-2 w-30 font-bold text-center"} onClick={handleClickLoanList}>대출상품</div>
+                <div className={"m-1 p-2 w-30 font-bold text-center"} onClick={handleClickCounselList}>대출신청 조회</div>
+                <div className={"m-1 p-2 w-30 font-bold text-center"} onClick={handleClickCreate}>대출상담 조회</div>
             </div>
             <div className={"flex flex-wrap w-full"}>
                 <Outlet/>
             </div>
-            <div className={"w-full flex m-2 p-2"}>
-                <div className={"m-1 p-2 w-30 font-bold text-center"} onClick={handleClickCounselList}>대출신청 조회</div>
-                <div className={"m-1 p-2 w-30 font-bold text-center"} onClick={handleClickCreate}>대출상담 조회</div>
-            </div>
-
         </BasicLayout>
     );
 }

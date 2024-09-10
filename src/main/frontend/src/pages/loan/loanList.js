@@ -1,5 +1,6 @@
 import React from 'react';
 import {createSearchParams, useSearchParams} from "react-router-dom";
+import LoanListComponent from "../../components/loan/LoanListComponent";
 
 function loanList(props) {
 
@@ -9,8 +10,7 @@ function loanList(props) {
 
     return (
         <div className={"p-4 w-full bg-white"}>
-            <div className={""}>
-            </div>
+            <LoanListComponent/>
         </div>
     );
 }
