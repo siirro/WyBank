@@ -8,6 +8,7 @@ import com.wybank.dto.PageRequestDTO;
 import com.wybank.dto.PageResponseDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class AccountController {
         return accountService.get(accountId);
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')")
     @GetMapping("/list")
     public PageResponseDTO<AccountDTO> getAccountList(PageRequestDTO pageRequestDTO) {
         return accountService.getList(pageRequestDTO);
@@ -61,6 +63,7 @@ public class AccountController {
         return accountProductService.getList(pageRequestDTO);
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')")
     @PostMapping("/product/create")
     public Map<String, Long> createProduct(@RequestBody AccountProductDTO dto) {
         Long accountProductId = accountProductService.create(dto);

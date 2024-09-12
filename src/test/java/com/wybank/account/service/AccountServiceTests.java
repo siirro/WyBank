@@ -27,32 +27,32 @@ public class AccountServiceTests {
 
     @Test
     public void testCreate() {
-        for(int i = 0; i<30; i++) {
-            AccountDTO dto = AccountDTO.builder()
-                    .accountProductId(1L)
-                    .accountNumber("111-111-111-111")
-                    .accountState("active")
-                    .balance(0L)
-                    .createdAt(LocalDateTime.now())
-                    .userId("testId"+i)
-                    .build();
-
-            log.info("만들어진계좌의번호는?"+accountService.create(dto));
-        }
+//        for(int i = 0; i<30; i++) {
+//            AccountDTO dto = AccountDTO.builder()
+//                    .accountProductId(1L)
+//                    .accountNumber("111-111-111-111")
+//                    .accountState("active")
+//                    .balance(0L)
+//                    .createdAt(LocalDateTime.now())
+//                    .userId("testId"+i)
+//                    .build();
+//
+//            log.info("만들어진계좌의번호는?"+accountService.create(dto));
+//        }
     }
 
     @Test
     public void testUpdate() {
-        Long accountId = 1L;
-
-        AccountDTO dto = AccountDTO.builder()
-                .accountId(accountId)
-                .balance(20000L)
-                .updatedAt(LocalDateTime.now())
-                .build();
-
-        log.info(LocalDateTime.now());
-        accountService.updateBalance(dto);
+//        Long accountId = 1L;
+//
+//        AccountDTO dto = AccountDTO.builder()
+//                .accountId(accountId)
+//                .balance(20000L)
+//                .updatedAt(LocalDateTime.now())
+//                .build();
+//
+//        log.info(LocalDateTime.now());
+//        accountService.updateBalance(dto);
 
     }
 

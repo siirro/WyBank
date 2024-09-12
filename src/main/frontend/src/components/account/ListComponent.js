@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import useCustomMove from "../../hooks/useCustomMove";
-import {getList} from "../../api/accountApi";
+import {getAccountList} from "../../api/accountApi";
 
 const initState = {
     dtoList:[],
@@ -19,7 +19,7 @@ function ListComponent(props) {
     const {page, size} = useCustomMove()
     const [serverData, setServerData] = useState(initState)
     useEffect(() => {
-        getList(page,size).then(data => {
+        getAccountList(page,size).then(data => {
             console.log(data)
             setServerData(data)
         })
