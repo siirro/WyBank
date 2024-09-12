@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getOne} from "../../api/accountApi";
+import {getAccountOne} from "../../api/accountApi";
 import useCustomMove from "../../hooks/useCustomMove";
 const initState = {
     accountId:0,
@@ -16,7 +16,7 @@ function InfoComponent({accountId}) {
     const {moveToList, moveToUpdateMemo, moveToUpdatePw}  = useCustomMove()
 
     useEffect(() => {
-        getOne(accountId).then(data => {
+        getAccountOne(accountId).then(data => {
             console.log(data)
             setAccount(data)
         })

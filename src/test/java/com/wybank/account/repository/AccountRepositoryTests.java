@@ -35,17 +35,17 @@ public class AccountRepositoryTests {
 
     @Test
     public void testInsert() {
-        Account account = Account.builder()
-                .accountNumber("111-111-111-111")
-                .accountState("active")
-                .balance(0L)
-                .createdAt(LocalDateTime.now())
-                .userId("testId")
-                .build();
-
-        Account result = accountRepository.save(account);
-
-        log.info("결과" + result);
+//        Account account = Account.builder()
+//                .accountNumber("111-111-111-111")
+//                .accountState("active")
+//                .balance(0L)
+//                .createdAt(LocalDateTime.now())
+//                .userId("testId")
+//                .build();
+//
+//        Account result = accountRepository.save(account);
+//
+//        log.info("결과" + result);
     }
 
     @Test

@@ -29,11 +29,17 @@ public class QCounsel extends EntityPathBase<Counsel> {
 
     public final NumberPath<Long> counselId = createNumber("counselId", Long.class);
 
+    public final DateTimePath<java.time.LocalDateTime> createdAt = createDateTime("createdAt", java.time.LocalDateTime.class);
+
     public final StringPath email = createString("email");
+
+    public final BooleanPath isDeleted = createBoolean("isDeleted");
 
     public final StringPath memo = createString("memo");
 
     public final StringPath name = createString("name");
+
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = createDateTime("updatedAt", java.time.LocalDateTime.class);
 
     public final StringPath zipCode = createString("zipCode");
 

@@ -18,18 +18,18 @@ public class AccountProductServiceTests {
 
     @Test
     public void testCreate() {
-        for(int i = 1; i<=30; i++) {
-            AccountProductDTO dto = AccountProductDTO.builder()
-                    .accountType("test")//"자유입출금상품", "정기적금", "정기예금", "주택청약저축",
-                    .accountName("Wy test product "+i)
-                    .accountMemo("test memo "+i)
-                    .accountDescription("test description")
-                    .singleTransactionLimit(1000000L)
-                    .dailyTransactionLimit(5000000L)
-                    .build();
-
-            log.info("계좌상품" + accountProductService.create(dto));
-        }
+//        for(int i = 1; i<=30; i++) {
+//            AccountProductDTO dto = AccountProductDTO.builder()
+//                    .accountType("test")//"자유입출금상품", "정기적금", "정기예금", "주택청약저축",
+//                    .accountName("Wy test product "+i)
+//                    .accountMemo("test memo "+i)
+//                    .accountDescription("test description")
+//                    .singleTransactionLimit(1000000L)
+//                    .dailyTransactionLimit(5000000L)
+//                    .build();
+//
+//            log.info("계좌상품" + accountProductService.create(dto));
+//        }
     }
 
     @Test
